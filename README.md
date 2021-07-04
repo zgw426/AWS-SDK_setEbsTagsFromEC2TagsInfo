@@ -10,7 +10,7 @@
 |オプション|概要|
 |---|---|
 |-f|EC2のNameタグに含まれる文字列を設定します。文字列は前方一致|
-|-d|`False`を指定するとEBSのタグ情報を設定します|
+|-d|`False`を指定するとdry-runが **無効** になり、EBSのタグ情報を設定します|
 
 
 スクリプト実行方法
@@ -31,7 +31,7 @@ PS C:\> python test.py -f aws -d False
 PS C:\> python test.py -f aws-test -d False
 ```
 
-実行例３）`-d` オプションを指定しない場合は dry-run になり、実行対象の情報の表示のみ行います。
+実行例３）`-d` オプションを指定しない場合は dry-runが **有効** になり、処理対象の情報表示のみ行います。
 
 ```powershell
 PS C:\> python test.py -f {EC2 Nameタグのフィルタ文字列(前方一致)}
