@@ -36,3 +36,30 @@ PS C:\> python test.py -f aws-test -d False
 ```powershell
 PS C:\> python test.py -f {EC2 Nameタグのフィルタ文字列(前方一致)}
 ```
+
+
+## スクリプト実行結果サンプル
+
+スクリプトを実行したときの出力サンプルです。
+
+```powershell
+PS C:\Users\usr01\test> python setEbsTags.py -f aws-test -d False
+Python Version Check [OK] : sys.version_info(major=3, minor=9, micro=5, releaselevel='final', serial=0)
+==========================================================
+[1]     ---------------------------
+        EC2 InstanceID = i-00000000000000001
+        タグ名= Name,   値= aws-testかきくけこ
+        タグ名= project,        値= projectかきくけこ
+        タグ名= cost,   値= costかきくけこ
+        EBS IDs= ['vol-000000000000001', 'vol-000000000000002']
+==========================================================
+----------------------------------------------------------
+[Dry-run:OFF] EBSのタグ情報を更新->開始
+[1](EBSタグ更新) ---------------------------
+        EC2-ID=i-00000000000000001
+        EBS=['vol-000000000000001', 'vol-000000000000002']
+        Tags=[{'Key': 'Name', 'Value': 'aws-testかきくけこ'}, {'Key': 'project', 'Value': 'projectかきくけこ'}, {'Key': 'cost', 'Value': 'costかきくけこ'}]
+[Dry-run:OFF] EBSのタグ情報を更新->終了
+----------------------------------------------------------
+PS C:\Users\usr01\test> 
+```
